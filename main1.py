@@ -1,8 +1,13 @@
 import streamlit as st
 import pickle
 import re
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('punkt_tab')
 
 def clean_code(text):
     text=re.sub(r'[^a-zA-Z0-9_\s]',' ' ,text) #remove special characters
